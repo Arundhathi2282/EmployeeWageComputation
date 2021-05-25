@@ -1,5 +1,6 @@
 #!/bin/bash -x
-wagePerHr=20
+function Workinghours()
+{
 while [ $((RANDOM%1)) ]
 do
 randomCheck=$((RANDOM%3))
@@ -11,12 +12,14 @@ case $randomCheck in
 		3) workingHrs=0
 			;;
 esac
-salary=$(($salary+$(($wagePerHr*$workingHrs))))
 hrs=$(($hrs+$workingHrs))
 day=$(($day+1))
 if [[ $hrs -eq 100 || $day -eq 20 ]]
 then
-	echo "Employee's salary is : $salary"
+	echo "Working Hours : $hrs "
 	break
 fi
 done
+}
+wagePerHr=20
+Workinghours
