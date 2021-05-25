@@ -18,3 +18,4 @@ do
 done
 echo ${array[@]}
 echo "Total wage is : $salary"
+
